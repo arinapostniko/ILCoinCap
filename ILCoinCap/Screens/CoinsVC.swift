@@ -14,6 +14,7 @@ class CoinsVC: ILDataLoadingVC {
     var coins: [CoinInfo] = []
     var offset = 0
     var isThereMoreCoins = true
+    var isLoadingMoreCoins = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,14 @@ class CoinsVC: ILDataLoadingVC {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CoinCell.self, forCellReuseIdentifier: "CoinCell")
     }
     
     func getCoins(offset: Int) {
         showLoadingView()
+        isLoadingMoreCoins = true
         
         NetworkManager.shared.getCoins(offset: offset) { [weak self] result in
             guard let self else { return }
@@ -64,6 +67,8 @@ class CoinsVC: ILDataLoadingVC {
                     alert.present(from: self)
                 }
             }
+            
+            self.isLoadingMoreCoins = false
         }
     }
 }
@@ -80,5 +85,20 @@ extension CoinsVC: UITableViewDataSource {
         cell.set(coin: coin)
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+extension CoinsVC: UITableViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            guard isThereMoreCoins, !isLoadingMoreCoins else { return }
+            offset += 10
+            getCoins(offset: offset)
+        }
     }
 }
