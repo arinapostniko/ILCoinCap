@@ -16,15 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = createAssetsNC()
+        window?.rootViewController = createCoinsNC()
         window?.makeKeyAndVisible()
     }
     
-    func createAssetsNC() -> UINavigationController {
-        let assetsVC = AssetsVC()
-        assetsVC.title = "Trending Coins"
+    func createCoinsNC() -> UINavigationController {
+        let coinsVC = CoinsVC()
+        coinsVC.title = "Trending Coins"
         
-        return UINavigationController(rootViewController: assetsVC)
+        return UINavigationController(rootViewController: coinsVC)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
