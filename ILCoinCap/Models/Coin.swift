@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Coin: Codable {
+struct CoinData: Codable {
+    let data: [CoinInfo]
+}
+
+struct CoinInfo: Codable {
     let name: String
     let symbol: String
     let priceUsd: String

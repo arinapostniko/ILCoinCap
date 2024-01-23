@@ -16,6 +16,10 @@
 		FE916C452B5FF55100A9C6AD /* ILBodylabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C442B5FF55100A9C6AD /* ILBodylabel.swift */; };
 		FE916C482B5FFA4100A9C6AD /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C472B5FFA4100A9C6AD /* UIView + Ext.swift */; };
 		FE916C4B2B5FFE6500A9C6AD /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C4A2B5FFE6500A9C6AD /* Coin.swift */; };
+		FE916C4E2B60090400A9C6AD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C4D2B60090400A9C6AD /* NetworkManager.swift */; };
+		FE916C512B600AB600A9C6AD /* ILError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C502B600AB600A9C6AD /* ILError.swift */; };
+		FE916C542B600E2D00A9C6AD /* ILDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */; };
+		FE916C562B6011E900A9C6AD /* ILAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C552B6011E900A9C6AD /* ILAlertVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		FE916C442B5FF55100A9C6AD /* ILBodylabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILBodylabel.swift; sourceTree = "<group>"; };
 		FE916C472B5FFA4100A9C6AD /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		FE916C4A2B5FFE6500A9C6AD /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		FE916C4D2B60090400A9C6AD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FE916C502B600AB600A9C6AD /* ILError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILError.swift; sourceTree = "<group>"; };
+		FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILDataLoadingVC.swift; sourceTree = "<group>"; };
+		FE916C552B6011E900A9C6AD /* ILAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILAlertVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,8 @@
 				FE916C392B5FE61A00A9C6AD /* Screens */,
 				FE916C3F2B5FF44100A9C6AD /* CustomViews */,
 				FE916C492B5FFE4700A9C6AD /* Models */,
+				FE916C4C2B6008F400A9C6AD /* Managers */,
+				FE916C4F2B600AA900A9C6AD /* Utilities */,
 				FE916C462B5FFA3300A9C6AD /* Extensions */,
 				FE916C2D2B5FE43E00A9C6AD /* Assets.xcassets */,
 				FE916C2F2B5FE43E00A9C6AD /* LaunchScreen.storyboard */,
@@ -94,6 +104,8 @@
 		FE916C3F2B5FF44100A9C6AD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FE916C572B6011F000A9C6AD /* Alerts */,
+				FE916C522B600E1300A9C6AD /* ViewControllers */,
 				FE916C432B5FF52800A9C6AD /* Labels */,
 				FE916C402B5FF44B00A9C6AD /* Cells */,
 			);
@@ -130,6 +142,38 @@
 				FE916C4A2B5FFE6500A9C6AD /* Coin.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FE916C4C2B6008F400A9C6AD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FE916C4D2B60090400A9C6AD /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FE916C4F2B600AA900A9C6AD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FE916C502B600AB600A9C6AD /* ILError.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FE916C522B600E1300A9C6AD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE916C572B6011F000A9C6AD /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				FE916C552B6011E900A9C6AD /* ILAlertVC.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,10 +249,14 @@
 				FE916C3B2B5FE63C00A9C6AD /* CoinsVC.swift in Sources */,
 				FE916C452B5FF55100A9C6AD /* ILBodylabel.swift in Sources */,
 				FE916C482B5FFA4100A9C6AD /* UIView + Ext.swift in Sources */,
+				FE916C512B600AB600A9C6AD /* ILError.swift in Sources */,
 				FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */,
+				FE916C4E2B60090400A9C6AD /* NetworkManager.swift in Sources */,
 				FE916C422B5FF47D00A9C6AD /* CoinCell.swift in Sources */,
 				FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */,
+				FE916C542B600E2D00A9C6AD /* ILDataLoadingVC.swift in Sources */,
 				FE916C4B2B5FFE6500A9C6AD /* Coin.swift in Sources */,
+				FE916C562B6011E900A9C6AD /* ILAlertVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

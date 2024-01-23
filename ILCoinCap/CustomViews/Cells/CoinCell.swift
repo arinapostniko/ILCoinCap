@@ -10,10 +10,10 @@ import UIKit
 class CoinCell: UITableViewCell {
     
     let coinImageView = UIImageView(frame: .zero)
-    let nameLabel = ILBodylabel(fontSize: 16, textAlignment: .left, textColor: .white)
+    let nameLabel = ILBodylabel(fontSize: 16, textAlignment: .left, textColor: .label)
     let symbolLabel = ILBodylabel(fontSize: 14, textAlignment: .left, textColor: .secondaryLabel)
-    let priceUsdLabel = ILBodylabel(fontSize: 16, textAlignment: .right, textColor: .white)
-    let changePercent24HrLabel = ILBodylabel(fontSize: 14, textAlignment: .right, textColor: .systemPink)
+    let priceUsdLabel = ILBodylabel(fontSize: 16, textAlignment: .right, textColor: .label)
+    let changePercent24HrLabel = ILBodylabel(fontSize: 14, textAlignment: .right, textColor: .systemRed)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,9 +26,11 @@ class CoinCell: UITableViewCell {
     
     private func configure() {
         addSubviews(coinImageView, nameLabel, symbolLabel, priceUsdLabel, changePercent24HrLabel)
+        backgroundColor = .clear
         
         coinImageView.translatesAutoresizingMaskIntoConstraints = false
         coinImageView.layer.cornerRadius = 12
+        coinImageView.backgroundColor = .systemGray6.withAlphaComponent(0.8)
         
         NSLayoutConstraint.activate([
             coinImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -39,12 +41,12 @@ class CoinCell: UITableViewCell {
             nameLabel.topAnchor.constraint(equalTo: coinImageView.topAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
             nameLabel.heightAnchor.constraint(equalToConstant: 19),
-            nameLabel.widthAnchor.constraint(equalToConstant: 52),
+            nameLabel.widthAnchor.constraint(equalToConstant: 92),
             
             symbolLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 2),
             symbolLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
             symbolLabel.heightAnchor.constraint(equalToConstant: 17),
-            symbolLabel.widthAnchor.constraint(equalToConstant: 28),
+            symbolLabel.widthAnchor.constraint(equalToConstant: 92),
             
             priceUsdLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor),
             priceUsdLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -54,11 +56,11 @@ class CoinCell: UITableViewCell {
             changePercent24HrLabel.topAnchor.constraint(equalTo: priceUsdLabel.bottomAnchor, constant: 2),
             changePercent24HrLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             changePercent24HrLabel.heightAnchor.constraint(equalToConstant: 17),
-            changePercent24HrLabel.widthAnchor.constraint(equalToConstant: 56)
+            changePercent24HrLabel.widthAnchor.constraint(equalToConstant: 92)
         ])
     }
     
-    func set(coin: Coin) {
+    func set(coin: CoinInfo) {
         nameLabel.text = coin.name
         symbolLabel.text = coin.symbol
         priceUsdLabel.text = coin.priceUsd
