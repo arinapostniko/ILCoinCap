@@ -63,30 +63,7 @@ class CoinCell: UITableViewCell {
     func set(coin: CoinInfo) {
         nameLabel.text = coin.name
         symbolLabel.text = coin.symbol
-        priceUsdLabel.text = formatPrice(coin.priceUsd)
-        changePercent24HrLabel.text = formatChangePercentage(coin.changePercent24Hr)
-    }
-    
-    func formatPrice(_ priceString: String) -> String? {
-        guard let priceValue = Double(priceString) else { return nil }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "USD"
-        
-        guard let formattedPrice = formatter.string(from: NSNumber(value: priceValue)) else { return nil }
-        
-        let finalString = "$ " + formattedPrice.replacingOccurrences(of: formatter.currencySymbol, with: "").trimmingCharacters(in: .whitespaces)
-
-        return finalString
-    }
-    
-    func formatChangePercentage(_ changePercent24HrString: String) -> String? {
-        if let changePercent24HrDouble = Double(changePercent24HrString) {
-            let formattedPercent = String(format: "%.2f%%", changePercent24HrDouble)
-            return formattedPercent
-        } else {
-            return nil
-        }
+        priceUsdLabel.text = coin.priceUsd.formatAsCurrency()
+        changePercent24HrLabel.text = coin.changePercent24Hr.formatChangePercentage()
     }
 }
