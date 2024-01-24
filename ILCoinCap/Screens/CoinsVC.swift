@@ -9,6 +9,8 @@ import UIKit
 
 class CoinsVC: ILDataLoadingVC {
     
+    let backgroundView = ILBackgroundView()
+    let backgroundBlur = UIView()
     let titleLabel = ILTitleLabel()
     let searchButton = ILButton(image: .search)
     let tableView = UITableView()
@@ -23,6 +25,8 @@ class CoinsVC: ILDataLoadingVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubviews()
+        configureBackground()
         configureVC()
         configureSearchController()
         configureTableView()
@@ -30,10 +34,12 @@ class CoinsVC: ILDataLoadingVC {
         getCoins(offset: offset)
     }
     
+    private func addSubviews() {
+        view.addSubviews(backgroundView, backgroundBlur, titleLabel, searchButton, tableView)
+    }
+    
     private func configureVC() {
-        view.backgroundColor = .black
         navigationController?.setNavigationBarHidden(true, animated: true)
-        view.addSubviews(titleLabel, searchButton)
         
         titleLabel.text = "Trending Coins"
         searchButton.addTarget(self, action: #selector(showSearchBar), for: .touchUpInside)
@@ -48,6 +54,22 @@ class CoinsVC: ILDataLoadingVC {
             searchButton.heightAnchor.constraint(equalToConstant: 40),
             searchButton.widthAnchor.constraint(equalToConstant: 40)
         ])
+    }
+    
+    private func configureBackground() {
+        view.backgroundColor = .black
+        
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.frame = view.bounds
+        
+        let blurEffect = UIBlurEffect(style: .systemThinMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.bounds
+        
+        backgroundView.addSubview(blurView)
+        backgroundBlur.translatesAutoresizingMaskIntoConstraints = false
+        backgroundBlur.backgroundColor = .black.withAlphaComponent(0.8)
+        backgroundBlur.frame = view.bounds
     }
     
     @objc
@@ -69,7 +91,6 @@ class CoinsVC: ILDataLoadingVC {
     }
     
     private func configureTableView() {
-        view.addSubview(tableView)
         tableView.frame = .zero
         tableView.rowHeight = 72
         tableView.tableFooterView = UIView(frame: .zero)

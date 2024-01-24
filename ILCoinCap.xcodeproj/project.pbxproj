@@ -13,6 +13,10 @@
 		FE70DA062B614F64006CFE1F /* ILItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */; };
 		FE70DA082B6162DC006CFE1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA072B6162DC006CFE1F /* Constants.swift */; };
 		FE70DA0B2B616A1C006CFE1F /* GonziExpanded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE70DA0A2B616A16006CFE1F /* GonziExpanded-Bold.ttf */; };
+		FE70DA0D2B6172FF006CFE1F /* ILEllipseOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA0C2B6172FF006CFE1F /* ILEllipseOne.swift */; };
+		FE70DA0F2B6174E0006CFE1F /* ILEllipseTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA0E2B6174E0006CFE1F /* ILEllipseTwo.swift */; };
+		FE70DA112B61757B006CFE1F /* ILEllipseThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA102B61757B006CFE1F /* ILEllipseThree.swift */; };
+		FE70DA132B617E06006CFE1F /* ILBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA122B617E06006CFE1F /* ILBackgroundView.swift */; };
 		FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */; };
 		FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */; };
 		FE916C2E2B5FE43E00A9C6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE916C2D2B5FE43E00A9C6AD /* Assets.xcassets */; };
@@ -27,7 +31,6 @@
 		FE916C542B600E2D00A9C6AD /* ILDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */; };
 		FE916C562B6011E900A9C6AD /* ILAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C552B6011E900A9C6AD /* ILAlertVC.swift */; };
 		FE916C5C2B60427D00A9C6AD /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C5B2B60427D00A9C6AD /* String + Ext.swift */; };
-		FE916C5F2B60536500A9C6AD /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C5E2B60536500A9C6AD /* Ellipse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILItemInfoView.swift; sourceTree = "<group>"; };
 		FE70DA072B6162DC006CFE1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FE70DA0A2B616A16006CFE1F /* GonziExpanded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GonziExpanded-Bold.ttf"; sourceTree = "<group>"; };
+		FE70DA0C2B6172FF006CFE1F /* ILEllipseOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILEllipseOne.swift; sourceTree = "<group>"; };
+		FE70DA0E2B6174E0006CFE1F /* ILEllipseTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILEllipseTwo.swift; sourceTree = "<group>"; };
+		FE70DA102B61757B006CFE1F /* ILEllipseThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILEllipseThree.swift; sourceTree = "<group>"; };
+		FE70DA122B617E06006CFE1F /* ILBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILBackgroundView.swift; sourceTree = "<group>"; };
 		FE916C212B5FE43D00A9C6AD /* ILCoinCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILCoinCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +60,6 @@
 		FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILDataLoadingVC.swift; sourceTree = "<group>"; };
 		FE916C552B6011E900A9C6AD /* ILAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILAlertVC.swift; sourceTree = "<group>"; };
 		FE916C5B2B60427D00A9C6AD /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
-		FE916C5E2B60536500A9C6AD /* Ellipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ellipse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +224,11 @@
 		FE916C5D2B60534300A9C6AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FE916C5E2B60536500A9C6AD /* Ellipse.swift */,
 				FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */,
+				FE70DA0C2B6172FF006CFE1F /* ILEllipseOne.swift */,
+				FE70DA0E2B6174E0006CFE1F /* ILEllipseTwo.swift */,
+				FE70DA102B61757B006CFE1F /* ILEllipseThree.swift */,
+				FE70DA122B617E06006CFE1F /* ILBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,18 +305,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE916C5C2B60427D00A9C6AD /* String + Ext.swift in Sources */,
-				FE916C5F2B60536500A9C6AD /* Ellipse.swift in Sources */,
 				FE916C3B2B5FE63C00A9C6AD /* CoinsVC.swift in Sources */,
 				FE916C452B5FF55100A9C6AD /* ILBodylabel.swift in Sources */,
 				FE916C482B5FFA4100A9C6AD /* UIView + Ext.swift in Sources */,
 				FE916C512B600AB600A9C6AD /* ILError.swift in Sources */,
 				FE70D9F92B610F0E006CFE1F /* ILTitleLabel.swift in Sources */,
 				FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */,
+				FE70DA0D2B6172FF006CFE1F /* ILEllipseOne.swift in Sources */,
 				FE70D9FC2B611158006CFE1F /* ILButton.swift in Sources */,
 				FE916C4E2B60090400A9C6AD /* NetworkManager.swift in Sources */,
+				FE70DA0F2B6174E0006CFE1F /* ILEllipseTwo.swift in Sources */,
+				FE70DA112B61757B006CFE1F /* ILEllipseThree.swift in Sources */,
 				FE916C422B5FF47D00A9C6AD /* CoinCell.swift in Sources */,
 				FE70DA062B614F64006CFE1F /* ILItemInfoView.swift in Sources */,
 				FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */,
+				FE70DA132B617E06006CFE1F /* ILBackgroundView.swift in Sources */,
 				FE70DA042B614F2A006CFE1F /* InfoVC.swift in Sources */,
 				FE916C542B600E2D00A9C6AD /* ILDataLoadingVC.swift in Sources */,
 				FE916C4B2B5FFE6500A9C6AD /* Coin.swift in Sources */,

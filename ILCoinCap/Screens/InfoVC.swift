@@ -9,6 +9,8 @@ import UIKit
 
 class InfoVC: UIViewController {
     
+    let backgroundView = ILBackgroundView()
+    let backgroundBlur = UIView()
     let dismissVCButton = ILButton(image: .chevronLeft)
     let coinNameLabel = ILTitleLabel()
     let priceUsdLabel = ILBodylabel(fontSize: 24, textAlignment: .left, textColor: .label)
@@ -31,9 +33,26 @@ class InfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        configureBackground()
         configureStackView()
         layoutUI()
+    }
+    
+    private func configureBackground() {
+        view.backgroundColor = .black
+        view.addSubviews(backgroundView, backgroundBlur)
+        
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.frame = view.bounds
+        
+        let blurEffect = UIBlurEffect(style: .systemThinMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.bounds
+        
+        backgroundView.addSubview(blurView)
+        backgroundBlur.translatesAutoresizingMaskIntoConstraints = false
+        backgroundBlur.backgroundColor = .black.withAlphaComponent(0.8)
+        backgroundBlur.frame = view.bounds
     }
     
     private func configureStackView() {
