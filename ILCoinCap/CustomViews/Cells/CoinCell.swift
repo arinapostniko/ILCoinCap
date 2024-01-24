@@ -25,8 +25,8 @@ class CoinCell: UITableViewCell {
     }
     
     private func configure() {
-        addSubviews(coinImageView, nameLabel, symbolLabel, priceUsdLabel, changePercent24HrLabel)
         backgroundColor = .clear
+        addSubviews(coinImageView, nameLabel, symbolLabel, priceUsdLabel, changePercent24HrLabel)
         
         coinImageView.translatesAutoresizingMaskIntoConstraints = false
         coinImageView.layer.cornerRadius = 12

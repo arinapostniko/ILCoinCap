@@ -9,8 +9,8 @@ import UIKit
 
 class ILAlertVC: UIAlertController {
     
-    func configure(title: String, message: String) {
-        self.title = title
+    func configure(title: AlertTitles, message: String) {
+        self.title = title.rawValue
         self.message = message
     }
     

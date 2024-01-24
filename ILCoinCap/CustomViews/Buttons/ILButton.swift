@@ -18,9 +18,9 @@ class ILButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(image: String) {
+    convenience init(image: SFSymbols) {
         self.init(frame: .zero)
-        self.setImage(UIImage(systemName: image), for: .normal)
+        self.setImage(UIImage(systemName: image.rawValue), for: .normal)
     }
     
     private func configure() {

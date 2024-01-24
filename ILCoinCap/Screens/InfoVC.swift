@@ -9,7 +9,7 @@ import UIKit
 
 class InfoVC: UIViewController {
     
-    let dismissVCButton = ILButton(image: "chevron.left")
+    let dismissVCButton = ILButton(image: .chevronLeft)
     let coinNameLabel = ILTitleLabel()
     let priceUsdLabel = ILBodylabel(fontSize: 24, textAlignment: .left, textColor: .label)
     let changePercent24HrLabel = ILBodylabel(fontSize: 14, textAlignment: .left, textColor: .systemGreen)

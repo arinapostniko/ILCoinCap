@@ -43,13 +43,13 @@ class ILItemInfoView: UIView {
     func set(itemInfoType: ItemInfoType, with info: String) {
         switch itemInfoType {
         case .marketCap:
-            categoryNameLabel.text = "Market Cap"
+            categoryNameLabel.text = CategoriesNames.marketCap
             categoryInfoLabel.text = info.formatMarketCap()
         case .supply:
-            categoryNameLabel.text = "Supply"
+            categoryNameLabel.text = CategoriesNames.supply
             categoryInfoLabel.text = info.formatSupply()
         case .volume24Hr:
-            categoryNameLabel.text = "Volume 24Hr"
+            categoryNameLabel.text = CategoriesNames.volume24Hr
             categoryInfoLabel.text = info.formatVolumeUsd24Hr()
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 class CoinsVC: ILDataLoadingVC {
     
     let titleLabel = ILTitleLabel()
-    let searchButton = ILButton(image: "magnifyingglass")
+    let searchButton = ILButton(image: .search)
     let tableView = UITableView()
     
     var coins: [CoinInfo] = []
@@ -30,7 +30,7 @@ class CoinsVC: ILDataLoadingVC {
         getCoins(offset: offset)
     }
     
-    func configureVC() {
+    private func configureVC() {
         view.backgroundColor = .black
         navigationController?.setNavigationBarHidden(true, animated: true)
         view.addSubviews(titleLabel, searchButton)
@@ -59,7 +59,7 @@ class CoinsVC: ILDataLoadingVC {
         navigationController?.setNavigationBarHidden(isSearchBarHidden, animated: false)
     }
     
-    func configureSearchController() {
+    private func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search for a coin"
@@ -69,7 +69,7 @@ class CoinsVC: ILDataLoadingVC {
         navigationItem.searchController = searchController
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         view.addSubview(tableView)
         tableView.frame = .zero
         tableView.rowHeight = 72
@@ -79,7 +79,7 @@ class CoinsVC: ILDataLoadingVC {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CoinCell.self, forCellReuseIdentifier: "CoinCell")
+        tableView.register(CoinCell.self, forCellReuseIdentifier: ReuseIDs.coinCell)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -102,22 +102,30 @@ class CoinsVC: ILDataLoadingVC {
             
             switch result {
             case .success(let coins):
-                if coins.count < 10 { self.isThereMoreCoins = false }
-                self.coins.append(contentsOf: coins)
-                DispatchQueue.main.async { self.tableView.reloadData() }
+                updateUI(with: coins)
             case .failure(let error):
-                DispatchQueue.main.async {
-                    let alert = ILAlertVC()
-                    alert.configure(title: "Something Went Wrong", message: error.rawValue)
-                    alert.addAction(title: "OK", style: .default) { _ in
-                        self.dismiss(animated: true)
-                    }
-                    
-                    alert.present(from: self)
-                }
+                presentAlertOnMainThread(with: error)
             }
             
             self.isLoadingMoreCoins = false
+        }
+    }
+    
+    func updateUI(with coins: [CoinInfo]) {
+        if coins.count < 10 { self.isThereMoreCoins = false }
+        self.coins.append(contentsOf: coins)
+        DispatchQueue.main.async { self.tableView.reloadData() }
+    }
+    
+    func presentAlertOnMainThread(with error: ILError) {
+        DispatchQueue.main.async {
+            let alert = ILAlertVC()
+            alert.configure(title: .somethingWentWrong, message: error.rawValue)
+            alert.addAction(title: "OK", style: .default) { _ in
+                self.dismiss(animated: true)
+            }
+            
+            alert.present(from: self)
         }
     }
 }
@@ -129,7 +137,7 @@ extension CoinsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIDs.coinCell) as! CoinCell
         let coin = isSearchBarHidden ? coins[indexPath.row] : filteredCoins[indexPath.row]
         cell.set(coin: coin)
         cell.selectionStyle = .none
