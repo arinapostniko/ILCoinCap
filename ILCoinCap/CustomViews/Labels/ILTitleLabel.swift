@@ -21,7 +21,7 @@ class ILTitleLabel: UILabel {
     private func configure() {
         textColor = .label
         textAlignment = .left
-        font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        font = UIFont(name: "Gonzi Expanded PERSONAL USE Bold", size: 24)
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }

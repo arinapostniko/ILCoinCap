@@ -12,6 +12,7 @@
 		FE70DA042B614F2A006CFE1F /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA032B614F2A006CFE1F /* InfoVC.swift */; };
 		FE70DA062B614F64006CFE1F /* ILItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */; };
 		FE70DA082B6162DC006CFE1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA072B6162DC006CFE1F /* Constants.swift */; };
+		FE70DA0B2B616A1C006CFE1F /* GonziExpanded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE70DA0A2B616A16006CFE1F /* GonziExpanded-Bold.ttf */; };
 		FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */; };
 		FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */; };
 		FE916C2E2B5FE43E00A9C6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE916C2D2B5FE43E00A9C6AD /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		FE70DA032B614F2A006CFE1F /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILItemInfoView.swift; sourceTree = "<group>"; };
 		FE70DA072B6162DC006CFE1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FE70DA0A2B616A16006CFE1F /* GonziExpanded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GonziExpanded-Bold.ttf"; sourceTree = "<group>"; };
 		FE916C212B5FE43D00A9C6AD /* ILCoinCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILCoinCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		FE70DA092B6169DE006CFE1F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE70DA0A2B616A16006CFE1F /* GonziExpanded-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FE916C182B5FE43D00A9C6AD = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 				FE916C4C2B6008F400A9C6AD /* Managers */,
 				FE916C4F2B600AA900A9C6AD /* Utilities */,
 				FE916C462B5FFA3300A9C6AD /* Extensions */,
+				FE70DA092B6169DE006CFE1F /* Fonts */,
 				FE916C2D2B5FE43E00A9C6AD /* Assets.xcassets */,
 				FE916C2F2B5FE43E00A9C6AD /* LaunchScreen.storyboard */,
 				FE916C322B5FE43E00A9C6AD /* Info.plist */,
@@ -273,6 +284,7 @@
 			files = (
 				FE916C312B5FE43E00A9C6AD /* LaunchScreen.storyboard in Resources */,
 				FE916C2E2B5FE43E00A9C6AD /* Assets.xcassets in Resources */,
+				FE70DA0B2B616A1C006CFE1F /* GonziExpanded-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

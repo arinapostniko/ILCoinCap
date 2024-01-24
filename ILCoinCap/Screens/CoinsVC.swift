@@ -42,7 +42,6 @@ class CoinsVC: ILDataLoadingVC {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 17.5),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.heightAnchor.constraint(equalToConstant: 29),
-            titleLabel.widthAnchor.constraint(equalToConstant: 213),
             
             searchButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             searchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
