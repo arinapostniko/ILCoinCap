@@ -83,8 +83,18 @@ class CoinsVC: ILDataLoadingVC {
     private func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
+        
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = .clear
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.secondaryLabel.cgColor
+            textField.layer.cornerRadius = 12
+        }
+        
+        searchController.searchBar.barTintColor = .clear
         searchController.searchBar.placeholder = "Search for a coin"
         searchController.searchBar.showsCancelButton = true
+        searchController.searchBar.tintColor = .secondaryLabel
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
@@ -104,7 +114,7 @@ class CoinsVC: ILDataLoadingVC {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 118),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
