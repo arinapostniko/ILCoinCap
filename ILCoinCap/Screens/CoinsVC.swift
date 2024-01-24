@@ -14,13 +14,16 @@ class CoinsVC: ILDataLoadingVC {
     let tableView = UITableView()
     
     var coins: [CoinInfo] = []
+    var filteredCoins: [CoinInfo] = []
     var offset = 0
     var isThereMoreCoins = true
     var isLoadingMoreCoins = false
+    var isSearchBarHidden = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
+        configureSearchController()
         configureTableView()
         
         getCoins(offset: offset)
@@ -28,8 +31,11 @@ class CoinsVC: ILDataLoadingVC {
     
     func configureVC() {
         view.backgroundColor = .black
+        navigationController?.setNavigationBarHidden(true, animated: true)
         view.addSubviews(titleLabel, searchButton)
+        
         titleLabel.text = "Trending Coins"
+        searchButton.addTarget(self, action: #selector(showSearchBar), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 17.5),
@@ -42,6 +48,24 @@ class CoinsVC: ILDataLoadingVC {
             searchButton.heightAnchor.constraint(equalToConstant: 40),
             searchButton.widthAnchor.constraint(equalToConstant: 40)
         ])
+    }
+    
+    @objc
+    func showSearchBar() {
+        isSearchBarHidden = false
+        titleLabel.isHidden = true
+        searchButton.isHidden = true
+        navigationController?.setNavigationBarHidden(isSearchBarHidden, animated: false)
+    }
+    
+    func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search for a coin"
+        searchController.searchBar.showsCancelButton = true
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
     }
     
     func configureTableView() {
@@ -100,12 +124,12 @@ class CoinsVC: ILDataLoadingVC {
 extension CoinsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coins.count
+        return isSearchBarHidden ? coins.count : filteredCoins.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
-        let coin = coins[indexPath.row]
+        let coin = isSearchBarHidden ? coins[indexPath.row] : filteredCoins[indexPath.row]
         cell.set(coin: coin)
         cell.selectionStyle = .none
         return cell
@@ -124,5 +148,38 @@ extension CoinsVC: UITableViewDelegate {
             offset += 10
             getCoins(offset: offset)
         }
+    }
+}
+
+extension CoinsVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredCoins.removeAll()
+            tableView.reloadData()
+            return
+        }
+        
+        NetworkManager.shared.searchCoins(searchTerm: filter) { [weak self] result in
+            guard let self else { return }
+            
+            switch result {
+            case .success(let coins):
+                self.filteredCoins = coins
+                DispatchQueue.main.async { self.tableView.reloadData() }
+            case .failure(let error):
+                print(error.rawValue)
+            }
+        }
+    }
+}
+
+extension CoinsVC: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearchBarHidden = true
+        titleLabel.isHidden = false
+        searchButton.isHidden = false
+        navigationController?.setNavigationBarHidden(isSearchBarHidden, animated: false)
     }
 }

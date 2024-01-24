@@ -18,12 +18,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = createCoinsNC()
         window?.makeKeyAndVisible()
+        
+        configureNavigationBar()
     }
     
     func createCoinsNC() -> UINavigationController {
         let coinsVC = CoinsVC()
         
         return UINavigationController(rootViewController: coinsVC)
+    }
+    
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .white
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -63,15 +63,15 @@ class CoinCell: UITableViewCell {
     func set(coin: CoinInfo) {
         nameLabel.text = coin.name
         symbolLabel.text = coin.symbol
-        priceUsdLabel.text = coin.priceUsd.formatAsCurrency()
+        priceUsdLabel.text = coin.priceUsd?.formatAsCurrency() ?? ""
         
-        let changePercent24Hr = coin.changePercent24Hr.formatChangePercentage()
+        let changePercent24Hr = coin.changePercent24Hr?.formatChangePercentage() ?? ""
         
-        if changePercent24Hr!.hasPrefix("-") {
+        if changePercent24Hr.hasPrefix("-") {
             changePercent24HrLabel.textColor = .systemRed
         } else {
             changePercent24HrLabel.textColor = .systemGreen
-            changePercent24HrLabel.text = "+" + changePercent24Hr!
+            changePercent24HrLabel.text = "+" + changePercent24Hr
             return
         }
         
