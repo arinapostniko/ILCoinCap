@@ -74,7 +74,7 @@ class InfoVC: UIViewController {
             changePercent24HrLabel.heightAnchor.constraint(equalToConstant: 17),
             changePercent24HrLabel.widthAnchor.constraint(equalToConstant: 116),
             
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 125),
+            stackView.topAnchor.constraint(equalTo: priceUsdLabel.bottomAnchor, constant: 24),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.heightAnchor.constraint(equalToConstant: 59)
@@ -82,7 +82,7 @@ class InfoVC: UIViewController {
         
         dismissVCButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         coinNameLabel.text = coin.name
-        priceUsdLabel.text = coin.priceUsd?.formatAsCurrency()
+        priceUsdLabel.text = coin.priceUsd?.formatAsPriceUsd()
         changePercent24HrLabel.text = coin.changePercent24Hr?.formatChangePercentage()
     }
     

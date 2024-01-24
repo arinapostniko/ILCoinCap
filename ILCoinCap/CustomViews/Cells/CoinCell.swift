@@ -58,7 +58,7 @@ class CoinCell: UITableViewCell {
     func set(coin: CoinInfo) {
         nameLabel.text = coin.name
         symbolLabel.text = coin.symbol
-        priceUsdLabel.text = coin.priceUsd?.formatAsCurrency() ?? ""
+        priceUsdLabel.text = coin.priceUsd?.formatAsPriceUsd() ?? ""
         
         let changePercent24Hr = coin.changePercent24Hr?.formatChangePercentage() ?? ""
         

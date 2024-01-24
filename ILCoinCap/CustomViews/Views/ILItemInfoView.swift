@@ -33,12 +33,10 @@ class ILItemInfoView: UIView {
             categoryNameLabel.topAnchor.constraint(equalTo: topAnchor),
             categoryNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             categoryNameLabel.heightAnchor.constraint(equalToConstant: 14),
-            categoryNameLabel.widthAnchor.constraint(equalToConstant: 74),
             
             categoryInfoLabel.topAnchor.constraint(equalTo: categoryNameLabel.bottomAnchor, constant: 2),
             categoryInfoLabel.leadingAnchor.constraint(equalTo: categoryNameLabel.leadingAnchor),
-            categoryInfoLabel.heightAnchor.constraint(equalToConstant: 19),
-            categoryInfoLabel.widthAnchor.constraint(equalToConstant: 74)
+            categoryInfoLabel.heightAnchor.constraint(equalToConstant: 19)
         ])
     }
     
@@ -46,12 +44,13 @@ class ILItemInfoView: UIView {
         switch itemInfoType {
         case .marketCap:
             categoryNameLabel.text = "Market Cap"
+            categoryInfoLabel.text = info.formatMarketCap()
         case .supply:
             categoryNameLabel.text = "Supply"
+            categoryInfoLabel.text = info.formatSupply()
         case .volume24Hr:
             categoryNameLabel.text = "Volume 24Hr"
+            categoryInfoLabel.text = info.formatVolumeUsd24Hr()
         }
-        
-        categoryInfoLabel.text = info
     }
 }
