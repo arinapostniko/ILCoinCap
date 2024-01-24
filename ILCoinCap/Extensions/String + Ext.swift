@@ -86,11 +86,12 @@ extension String {
     }
     
     func formatChangePercent24Hr() -> String? {
-        guard let floatValue = Float(self) else { return nil }
+        guard let changePercent = Double(self) else { return nil }
 
-        let formattedValue = String(format: "%+.2f", floatValue * 100)
-        let percentage = String(format: "%.2f%%", abs(floatValue) * 100)
+        let prefix = changePercent >= 0 ? "+ " : "- "
+        let absoluteChange = abs(changePercent)
+        let formattedString = String(format: "\(prefix)%.2f (%.2f%%)", absoluteChange, absoluteChange / 100)
 
-        return "\(formattedValue) (\(percentage))"
+        return formattedString
     }
 }
