@@ -22,7 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createCoinsNC() -> UINavigationController {
         let coinsVC = CoinsVC()
-        coinsVC.title = "Trending Coins"
         
         return UINavigationController(rootViewController: coinsVC)
     }

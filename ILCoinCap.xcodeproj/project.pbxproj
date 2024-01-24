@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE70D9F92B610F0E006CFE1F /* ILTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */; };
+		FE70D9FC2B611158006CFE1F /* ILButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70D9FB2B611158006CFE1F /* ILButton.swift */; };
 		FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */; };
 		FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */; };
 		FE916C2E2B5FE43E00A9C6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE916C2D2B5FE43E00A9C6AD /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILTitleLabel.swift; sourceTree = "<group>"; };
+		FE70D9FB2B611158006CFE1F /* ILButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILButton.swift; sourceTree = "<group>"; };
 		FE916C212B5FE43D00A9C6AD /* ILCoinCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILCoinCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE70D9FA2B61113F006CFE1F /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FE70D9FB2B611158006CFE1F /* ILButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		FE916C182B5FE43D00A9C6AD = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 		FE916C3F2B5FF44100A9C6AD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FE70D9FA2B61113F006CFE1F /* Buttons */,
 				FE916C5D2B60534300A9C6AD /* Views */,
 				FE916C572B6011F000A9C6AD /* Alerts */,
 				FE916C522B600E1300A9C6AD /* ViewControllers */,
@@ -129,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				FE916C442B5FF55100A9C6AD /* ILBodylabel.swift */,
+				FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -266,7 +280,9 @@
 				FE916C452B5FF55100A9C6AD /* ILBodylabel.swift in Sources */,
 				FE916C482B5FFA4100A9C6AD /* UIView + Ext.swift in Sources */,
 				FE916C512B600AB600A9C6AD /* ILError.swift in Sources */,
+				FE70D9F92B610F0E006CFE1F /* ILTitleLabel.swift in Sources */,
 				FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */,
+				FE70D9FC2B611158006CFE1F /* ILButton.swift in Sources */,
 				FE916C4E2B60090400A9C6AD /* NetworkManager.swift in Sources */,
 				FE916C422B5FF47D00A9C6AD /* CoinCell.swift in Sources */,
 				FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */,

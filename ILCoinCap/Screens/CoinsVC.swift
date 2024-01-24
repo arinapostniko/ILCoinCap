@@ -9,6 +9,8 @@ import UIKit
 
 class CoinsVC: ILDataLoadingVC {
     
+    let titleLabel = ILTitleLabel()
+    let searchButton = ILButton(image: "magnifyingglass")
     let tableView = UITableView()
     
     var coins: [CoinInfo] = []
@@ -26,12 +28,25 @@ class CoinsVC: ILDataLoadingVC {
     
     func configureVC() {
         view.backgroundColor = .black
-        navigationController?.navigationBar.prefersLargeTitles = true
+        view.addSubviews(titleLabel, searchButton)
+        titleLabel.text = "Trending Coins"
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 17.5),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleLabel.heightAnchor.constraint(equalToConstant: 29),
+            titleLabel.widthAnchor.constraint(equalToConstant: 213),
+            
+            searchButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            searchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            searchButton.heightAnchor.constraint(equalToConstant: 40),
+            searchButton.widthAnchor.constraint(equalToConstant: 40)
+        ])
     }
     
     func configureTableView() {
         view.addSubview(tableView)
-        tableView.frame = view.bounds
+        tableView.frame = .zero
         tableView.rowHeight = 72
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = .clear
@@ -40,6 +55,15 @@ class CoinsVC: ILDataLoadingVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CoinCell.self, forCellReuseIdentifier: "CoinCell")
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     func getCoins(offset: Int) {
