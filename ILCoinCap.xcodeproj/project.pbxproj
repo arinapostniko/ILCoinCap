@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FE70D9F92B610F0E006CFE1F /* ILTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */; };
 		FE70D9FC2B611158006CFE1F /* ILButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70D9FB2B611158006CFE1F /* ILButton.swift */; };
+		FE70DA042B614F2A006CFE1F /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA032B614F2A006CFE1F /* InfoVC.swift */; };
+		FE70DA062B614F64006CFE1F /* ILItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */; };
 		FE916C252B5FE43D00A9C6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */; };
 		FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */; };
 		FE916C2E2B5FE43E00A9C6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE916C2D2B5FE43E00A9C6AD /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILTitleLabel.swift; sourceTree = "<group>"; };
 		FE70D9FB2B611158006CFE1F /* ILButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILButton.swift; sourceTree = "<group>"; };
+		FE70DA032B614F2A006CFE1F /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILItemInfoView.swift; sourceTree = "<group>"; };
 		FE916C212B5FE43D00A9C6AD /* ILCoinCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILCoinCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE916C242B5FE43D00A9C6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE916C262B5FE43D00A9C6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				FE916C3A2B5FE63C00A9C6AD /* CoinsVC.swift */,
+				FE70DA032B614F2A006CFE1F /* InfoVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				FE916C5E2B60536500A9C6AD /* Ellipse.swift */,
+				FE70DA052B614F64006CFE1F /* ILItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,7 +291,9 @@
 				FE70D9FC2B611158006CFE1F /* ILButton.swift in Sources */,
 				FE916C4E2B60090400A9C6AD /* NetworkManager.swift in Sources */,
 				FE916C422B5FF47D00A9C6AD /* CoinCell.swift in Sources */,
+				FE70DA062B614F64006CFE1F /* ILItemInfoView.swift in Sources */,
 				FE916C272B5FE43D00A9C6AD /* SceneDelegate.swift in Sources */,
+				FE70DA042B614F2A006CFE1F /* InfoVC.swift in Sources */,
 				FE916C542B600E2D00A9C6AD /* ILDataLoadingVC.swift in Sources */,
 				FE916C4B2B5FFE6500A9C6AD /* Coin.swift in Sources */,
 				FE916C562B6011E900A9C6AD /* ILAlertVC.swift in Sources */,

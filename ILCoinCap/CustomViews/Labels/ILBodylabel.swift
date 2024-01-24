@@ -27,9 +27,6 @@ class ILBodylabel: UILabel {
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
-//        adjustsFontForContentSizeCategory = true
-//        adjustsFontSizeToFitWidth = true
-//        minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping
     }
 }

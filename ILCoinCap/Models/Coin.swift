@@ -14,6 +14,9 @@ struct CoinData: Codable {
 struct CoinInfo: Codable {
     let name: String
     let symbol: String
-    let priceUsd: String?
-    let changePercent24Hr: String?
+    var priceUsd: String?
+    var changePercent24Hr: String?
+    var marketCapUsd: String?
+    var supply: String?
+    var volumeUsd24Hr: String?
 }

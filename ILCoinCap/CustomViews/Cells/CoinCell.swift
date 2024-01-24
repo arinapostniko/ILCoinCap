@@ -36,27 +36,22 @@ class CoinCell: UITableViewCell {
             coinImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             coinImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             coinImageView.heightAnchor.constraint(equalToConstant: 48),
-            coinImageView.widthAnchor.constraint(equalToConstant: 48),
             
             nameLabel.topAnchor.constraint(equalTo: coinImageView.topAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
             nameLabel.heightAnchor.constraint(equalToConstant: 19),
-            nameLabel.widthAnchor.constraint(equalToConstant: 92),
             
             symbolLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 2),
             symbolLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
             symbolLabel.heightAnchor.constraint(equalToConstant: 17),
-            symbolLabel.widthAnchor.constraint(equalToConstant: 92),
             
             priceUsdLabel.topAnchor.constraint(equalTo: nameLabel.topAnchor),
             priceUsdLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             priceUsdLabel.heightAnchor.constraint(equalToConstant: 19),
-            priceUsdLabel.widthAnchor.constraint(equalToConstant: 92),
             
             changePercent24HrLabel.topAnchor.constraint(equalTo: priceUsdLabel.bottomAnchor, constant: 2),
             changePercent24HrLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            changePercent24HrLabel.heightAnchor.constraint(equalToConstant: 17),
-            changePercent24HrLabel.widthAnchor.constraint(equalToConstant: 92)
+            changePercent24HrLabel.heightAnchor.constraint(equalToConstant: 17)
         ])
     }
     

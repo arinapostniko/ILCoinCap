@@ -19,6 +19,7 @@ class CoinsVC: ILDataLoadingVC {
     var isThereMoreCoins = true
     var isLoadingMoreCoins = false
     var isSearchBarHidden = true
+    var isSearching = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +150,16 @@ extension CoinsVC: UITableViewDelegate {
             getCoins(offset: offset)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filteredCoins : coins
+        let coin = activeArray[indexPath.row]
+        
+        let destVC = InfoVC(coin: coin)
+        let navController = UINavigationController(rootViewController: destVC)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+    }
 }
 
 extension CoinsVC: UISearchResultsUpdating {
@@ -157,8 +168,11 @@ extension CoinsVC: UISearchResultsUpdating {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else {
             filteredCoins.removeAll()
             tableView.reloadData()
+            isSearching = false
             return
         }
+        
+        isSearching = true
         
         NetworkManager.shared.searchCoins(searchTerm: filter) { [weak self] result in
             guard let self else { return }
