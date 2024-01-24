@@ -102,7 +102,16 @@ class InfoVC: UIViewController {
         dismissVCButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         coinNameLabel.text = coin.name
         priceUsdLabel.text = coin.priceUsd?.formatAsPriceUsd()
-        changePercent24HrLabel.text = coin.changePercent24Hr?.formatChangePercentage()
+        changePercent24HrLabel.text = coin.changePercent24Hr?.formatChangePercent24Hr()
+        
+        let changePercent24Hr = coin.changePercent24Hr?.formatChangePercentage() ?? ""
+        
+        if changePercent24Hr.hasPrefix("-") {
+            changePercent24HrLabel.textColor = .systemRed
+        } else {
+            changePercent24HrLabel.textColor = .systemGreen
+            changePercent24HrLabel.text = "+" + changePercent24Hr
+        }
     }
     
     @objc

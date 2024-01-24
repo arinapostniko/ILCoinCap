@@ -67,7 +67,6 @@ class CoinCell: UITableViewCell {
         } else {
             changePercent24HrLabel.textColor = .systemGreen
             changePercent24HrLabel.text = "+" + changePercent24Hr
-            return
         }
         
         changePercent24HrLabel.text = changePercent24Hr
