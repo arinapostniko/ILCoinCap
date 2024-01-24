@@ -58,13 +58,34 @@ class InfoVC: UIViewController {
     private func configureStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
+        stackView.alignment = .center
         stackView.addArrangedSubview(marketCapItem)
+        
+        let separator1 = createSeparatorView()
+        stackView.addArrangedSubview(separator1)
+        
         stackView.addArrangedSubview(supplyItem)
+        
+        let separator2 = createSeparatorView()
+        stackView.addArrangedSubview(separator2)
+        
         stackView.addArrangedSubview(volume24HrItem)
         
         marketCapItem.set(itemInfoType: .marketCap, with: coin.marketCapUsd ?? "")
         supplyItem.set(itemInfoType: .supply, with: coin.supply ?? "")
         volume24HrItem.set(itemInfoType: .volume24Hr, with: coin.volumeUsd24Hr ?? "")
+    }
+    
+    private func createSeparatorView() -> UIView {
+        let separatorView = UIView()
+        separatorView.backgroundColor = .quaternaryLabel
+        
+        NSLayoutConstraint.activate([
+            separatorView.widthAnchor.constraint(equalToConstant: 1),
+            separatorView.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        return separatorView
     }
     
     private func layoutUI() {
