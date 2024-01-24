@@ -107,6 +107,6 @@ class InfoVC: UIViewController {
     
     @objc
     func dismissVC() {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }

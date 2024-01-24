@@ -37,7 +37,7 @@ class ILBackgroundView: UIView {
             
             ellipseTwo.widthAnchor.constraint(equalToConstant: 262),
             ellipseTwo.heightAnchor.constraint(equalToConstant: 262),
-            ellipseTwo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -131),
+            ellipseTwo.leadingAnchor.constraint(equalTo: leadingAnchor),
             ellipseTwo.topAnchor.constraint(equalTo: topAnchor, constant: 256),
             
             ellipseThree.widthAnchor.constraint(equalToConstant: 262),

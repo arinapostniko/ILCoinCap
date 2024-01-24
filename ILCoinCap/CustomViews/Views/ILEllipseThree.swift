@@ -21,7 +21,6 @@ class ILEllipseThree: UIView {
     private func configure() {
         let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 262, height: 262))
         backgroundView.backgroundColor = .clear
-        backgroundView.layer.cornerRadius = 262
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = backgroundView.bounds

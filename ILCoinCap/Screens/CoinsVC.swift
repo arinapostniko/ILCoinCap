@@ -184,9 +184,7 @@ extension CoinsVC: UITableViewDelegate {
         let coin = activeArray[indexPath.row]
         
         let destVC = InfoVC(coin: coin)
-        let navController = UINavigationController(rootViewController: destVC)
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
+        navigationController?.pushViewController(destVC, animated: true)
     }
 }
 
