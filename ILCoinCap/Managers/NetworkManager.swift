@@ -53,4 +53,42 @@ class NetworkManager {
         
         task.resume()
     }
+    
+    func searchCoins(offset: Int, searchTerm: String, completed: @escaping (Result<[CoinInfo], ILError>) -> Void) {
+        let endpoint = baseURL + "?search=\(searchTerm)"
+        
+        guard let url = URL(string: endpoint) else {
+            completed(.failure(.invalidUrl))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let _ = error {
+                completed(.failure(.unableToComplete))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let coinData = try decoder.decode(CoinData.self, from: data)
+                let coins = coinData.data
+                completed(.success(coins))
+            } catch {
+                completed(.failure(.invalidData))
+            }
+        }
+        
+        task.resume()
+    }
 }

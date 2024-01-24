@@ -21,6 +21,7 @@
 		FE916C542B600E2D00A9C6AD /* ILDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */; };
 		FE916C562B6011E900A9C6AD /* ILAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C552B6011E900A9C6AD /* ILAlertVC.swift */; };
 		FE916C5C2B60427D00A9C6AD /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C5B2B60427D00A9C6AD /* String + Ext.swift */; };
+		FE916C5F2B60536500A9C6AD /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE916C5E2B60536500A9C6AD /* Ellipse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FE916C532B600E2D00A9C6AD /* ILDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILDataLoadingVC.swift; sourceTree = "<group>"; };
 		FE916C552B6011E900A9C6AD /* ILAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILAlertVC.swift; sourceTree = "<group>"; };
 		FE916C5B2B60427D00A9C6AD /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
+		FE916C5E2B60536500A9C6AD /* Ellipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ellipse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		FE916C3F2B5FF44100A9C6AD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FE916C5D2B60534300A9C6AD /* Views */,
 				FE916C572B6011F000A9C6AD /* Alerts */,
 				FE916C522B600E1300A9C6AD /* ViewControllers */,
 				FE916C432B5FF52800A9C6AD /* Labels */,
@@ -179,6 +182,14 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		FE916C5D2B60534300A9C6AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE916C5E2B60536500A9C6AD /* Ellipse.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE916C5C2B60427D00A9C6AD /* String + Ext.swift in Sources */,
+				FE916C5F2B60536500A9C6AD /* Ellipse.swift in Sources */,
 				FE916C3B2B5FE63C00A9C6AD /* CoinsVC.swift in Sources */,
 				FE916C452B5FF55100A9C6AD /* ILBodylabel.swift in Sources */,
 				FE916C482B5FFA4100A9C6AD /* UIView + Ext.swift in Sources */,
