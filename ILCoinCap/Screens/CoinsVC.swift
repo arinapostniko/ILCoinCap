@@ -127,7 +127,7 @@ class CoinsVC: ILDataLoadingVC {
     @objc
     func refreshCoinsData() {
         coins.removeAll()
-        getCoins(offset: offset)
+        getCoins(offset: 0)
         DispatchQueue.main.async { self.tableView.reloadData() }
         refreshControl.endRefreshing()
     }
