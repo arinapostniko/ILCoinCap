@@ -14,6 +14,7 @@ class CoinsVC: ILDataLoadingVC {
     let titleLabel = ILTitleLabel()
     let searchButton = ILButton(image: .search)
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     
     var coins: [CoinInfo] = []
     var filteredCoins: [CoinInfo] = []
@@ -110,6 +111,8 @@ class CoinsVC: ILDataLoadingVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CoinCell.self, forCellReuseIdentifier: ReuseIDs.coinCell)
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshCoinsData), for: .valueChanged)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -119,6 +122,14 @@ class CoinsVC: ILDataLoadingVC {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    @objc
+    func refreshCoinsData() {
+        coins.removeAll()
+        getCoins(offset: offset)
+        DispatchQueue.main.async { self.tableView.reloadData() }
+        refreshControl.endRefreshing()
     }
     
     func getCoins(offset: Int) {
