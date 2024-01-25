@@ -36,6 +36,7 @@ class CoinCell: UITableViewCell {
             coinImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             coinImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             coinImageView.heightAnchor.constraint(equalToConstant: 48),
+            coinImageView.widthAnchor.constraint(equalToConstant: 48),
             
             nameLabel.topAnchor.constraint(equalTo: coinImageView.topAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
@@ -59,6 +60,9 @@ class CoinCell: UITableViewCell {
         nameLabel.text = coin.name
         symbolLabel.text = coin.symbol
         priceUsdLabel.text = coin.priceUsd?.formatAsPriceUsd() ?? ""
+        
+        let imageName = coin.symbol.lowercased()
+        coinImageView.image = UIImage(named: imageName)
         
         let changePercent24Hr = coin.changePercent24Hr?.formatChangePercentage() ?? ""
         
