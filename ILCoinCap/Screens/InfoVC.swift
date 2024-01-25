@@ -38,6 +38,11 @@ class InfoVC: UIViewController {
         layoutUI()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     private func configureBackground() {
         view.backgroundColor = .black
         view.addSubviews(backgroundView, backgroundBlur)
