@@ -42,7 +42,7 @@ class CoinsVC: ILDataLoadingVC {
     private func configureVC() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        titleLabel.text = "Trending Coins"
+        titleLabel.text = NSLocalizedString("Trending Coins", comment: "titles")
         searchButton.addTarget(self, action: #selector(showSearchBar), for: .touchUpInside)
         
         NSLayoutConstraint.activate([

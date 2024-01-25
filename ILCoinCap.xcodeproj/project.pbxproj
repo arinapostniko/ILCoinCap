@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE24C2802B6253CF00DA8192 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE24C2822B6253CF00DA8192 /* Localizable.strings */; };
 		FE70D9F92B610F0E006CFE1F /* ILTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */; };
 		FE70D9FC2B611158006CFE1F /* ILButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70D9FB2B611158006CFE1F /* ILButton.swift */; };
 		FE70DA042B614F2A006CFE1F /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70DA032B614F2A006CFE1F /* InfoVC.swift */; };
@@ -34,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE24C27B2B6252F800DA8192 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FE24C2812B6253CF00DA8192 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FE24C2832B6253D400DA8192 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FE70D9F82B610F0E006CFE1F /* ILTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILTitleLabel.swift; sourceTree = "<group>"; };
 		FE70D9FB2B611158006CFE1F /* ILButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILButton.swift; sourceTree = "<group>"; };
 		FE70DA032B614F2A006CFE1F /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		FE916C182B5FE43D00A9C6AD = {
 			isa = PBXGroup;
 			children = (
+				FE24C2822B6253CF00DA8192 /* Localizable.strings */,
 				FE916C232B5FE43D00A9C6AD /* ILCoinCap */,
 				FE916C222B5FE43D00A9C6AD /* Products */,
 			);
@@ -275,6 +280,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = FE916C182B5FE43D00A9C6AD;
 			productRefGroup = FE916C222B5FE43D00A9C6AD /* Products */;
@@ -292,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE916C312B5FE43E00A9C6AD /* LaunchScreen.storyboard in Resources */,
+				FE24C2802B6253CF00DA8192 /* Localizable.strings in Resources */,
 				FE916C2E2B5FE43E00A9C6AD /* Assets.xcassets in Resources */,
 				FE70DA0B2B616A1C006CFE1F /* GonziExpanded-Bold.ttf in Resources */,
 			);
@@ -331,10 +338,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FE24C2822B6253CF00DA8192 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE24C2812B6253CF00DA8192 /* en */,
+				FE24C2832B6253D400DA8192 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FE916C2F2B5FE43E00A9C6AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FE916C302B5FE43E00A9C6AD /* Base */,
+				FE24C27B2B6252F800DA8192 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -347,6 +364,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -410,6 +428,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
