@@ -179,8 +179,19 @@ extension CoinsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIDs.coinCell) as! CoinCell
-        let coin = isSearchBarHidden ? coins[indexPath.row] : filteredCoins[indexPath.row]
-        cell.set(coin: coin)
+        
+        if isSearchBarHidden {
+            if indexPath.row < coins.count {
+                let coin = coins[indexPath.row]
+                cell.set(coin: coin)
+            } else {}
+        } else {
+            if indexPath.row < filteredCoins.count {
+                let coin = filteredCoins[indexPath.row]
+                cell.set(coin: coin)
+            } else {}
+        }
+        
         cell.selectionStyle = .none
         return cell
     }
